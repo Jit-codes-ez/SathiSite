@@ -42,8 +42,6 @@ function checkBirthday() {
 const birthdayImages = [
   "images/saini1.jpg",
   "images/saini2.jpg",
-  "images/saini3.jpg",
-  "images/saini4.jpg"
 ];
 
 function setRandomBirthdayImage() {
