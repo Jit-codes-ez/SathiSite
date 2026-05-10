@@ -1,5 +1,4 @@
 /* FrontScript.js */
-// Floating hearts generator (optional if not already in HTML)
 function createHearts() {
   const heartsContainer = document.getElementById('hearts');
 
