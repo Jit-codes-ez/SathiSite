@@ -1,31 +1,46 @@
+<!--  index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Quicksand&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel = "stylesheet" href = "FrontStyle.css">
   <title>For My Love ❤️</title>
 </head>
 <body>
-<script src="FrontScript.js"></script>
 <div class="hearts" id="hearts"></div>
 
 <!-- Welcome Popup -->
 <div class="popup" id="welcome">
-  <h1>Welcome My Love ❤️</h1>
-  <p>I made this just for you...</p>
-  <button onclick="checkBirthday()">Enter</button>
+  <h1>Welcome to a soft little world of love and memories for Saini Paul 🌸💖</h1>
+
+  <p>Are you ready to step in?</p>
+
+  <button onclick="checkBirthday()">Begin The Journey</button>
 </div>
 
 <!-- Birthday Popup -->
 <div class="popup hidden" id="birthday">
-  <h1>🎉 Happy Birthday My Love 🎂</h1>
-  <p>You are the most special person in my life ❤️</p>
+
+  <!-- Random photo area -->
+  <div class="birthday-photo">
+    <img id="birthdayImg" src="" alt="Saini Paul ❤️">
+  </div>
+
+  <h1>🎉 Wishing you a very happy birthday, my love.. 🎂</h1>
+
+  <!-- Your message section -->
+  <div class="birthday-message" id="birthdayMessage">
+    <p>You are the most special person in my life ❤️</p>
+  </div>
+
   <button onclick="showMain()">Continue</button>
 </div>
 
 <!-- Main Website -->
-<div class="main" id="main">
+<div class="main hidden" id="main">
   <h1>Hi My Love ❤️</h1>
   <p>This website is a small piece of my heart.</p>
 
@@ -36,5 +51,7 @@
     <button>Love Letters</button>
   </div>
 </div>
+
+<script src="FrontScript.js"></script>
 </body>
 </html>

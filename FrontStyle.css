@@ -1,4 +1,4 @@
-/* Love Website - style.css ❤️ */
+/* <!--  FrontStyle.css --> */
 
 * {
   margin: 0;
@@ -73,17 +73,41 @@ body {
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   width: 80%;
-  max-width: 350px;
+  max-width: 500px;
 }
 
 .popup h1 {
-  font-size: 1.8rem;
+  font-size: 2.0rem;
   margin-bottom: 10px;
+  font-family: Great Vibes;
+  color: Red
 }
 
 .popup p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   opacity: 0.9;
+  font-family: Quicksand;
+}
+
+.birthday-photo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.birthday-photo img {
+  width: 500px;
+  height: 500px;
+  border-radius: 10%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.birthday-message {
+  margin: 10px 0;
 }
 
 /* Buttons */
@@ -105,12 +129,11 @@ button:hover {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Main section */
 .main {
-  display: none;
   text-align: center;
   z-index: 5;
   padding: 20px;
@@ -119,6 +142,7 @@ button:hover {
 .main h1 {
   font-size: 2rem;
   margin-bottom: 10px;
+  font-family: WindSong;
 }
 
 .main p {
@@ -146,4 +170,53 @@ button:hover {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .popup {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .main h1 {
+    font-size: 1.7rem;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+
+  .popup {
+    width: 95%;
+    padding: 18px;
+  }
+
+  .popup h1 {
+    font-size: 1.3rem;
+  }
+
+  .main h1 {
+    font-size: 1.4rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav button {
+    width: 80%;
+  }
+
+  button {
+    width: 100%;
+  }
 }
