@@ -364,7 +364,8 @@ button:hover {
   }
 
   .nav button {
-    width: 80%;
+    width: 60%;
+    height: 50%;
   }
 
   button {
