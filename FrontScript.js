@@ -59,6 +59,7 @@ function showMain() {
 
   if (birthdayPopup) birthdayPopup.classList.add('hidden');
   if (main) main.classList.remove('hidden');
+  if (noticeBar) noticeBar.classList.remove('hidden');
 }
 
 // 🎉 Birthday Confetti Effect

@@ -169,6 +169,8 @@ button:hover {
   z-index: 5;
   padding: 20px;
   padding-top: 80px;
+  top: 0;
+  left: 0;
 }
 
 .main h1 {
@@ -187,11 +189,63 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 
-.nav button {
-  min-width: 120px;
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 180px;
+  height: 140px;
+
+  border-radius: 24px;
+
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* ✨ Hover effect */
+
+.nav-btn:hover {
+  transform: translateY(-6px) scale(1.03);
+
+  background: rgba(255,255,255,0.22);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* 🌸 Icons */
+
+.nav-btn i {
+  font-size: 2.5rem;
+
+  color: #fff0f5;
+}
+
+/* 💖 Text */
+
+.nav-btn span {
+  font-size: 1rem;
+
+  font-family: 'Quicksand', sans-serif;
+
+  font-weight: 600;
+
+  text-align: center;
 }
 
 /* Smooth appearance */
@@ -204,6 +258,68 @@ button:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.notice-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  overflow: hidden;
+
+  padding: 10px 0;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 0.5px solid rgba(255,255,255,0.2);
+
+  z-index: 1000;
+}
+
+/* ✨ Scrolling text */
+
+.scroll-text {
+  position: relative;
+
+  display: inline-block;
+  white-space: nowrap;
+
+  font-family: Quicksand;
+
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+
+  color: #af0023;
+
+  transform: translateX(100vw);
+
+  animation: smoothScroll 18s linear infinite;
+}
+
+.saini-name {
+  font-family: 'Great Vibes', cursive;
+
+  font-size: 1.5rem;
+
+  color: #75072a;
+
+  padding: 0 4px;
+}
+
+/* Smooth scrolling */
+
+@keyframes smoothScroll {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsiveness Code Section */
 @media (max-width: 768px) {
   .popup {
     padding: 20px;
@@ -218,74 +334,6 @@ button:hover {
     font-size: 13px;
     padding: 9px 16px;
   }
-}
-
-.notice-bar {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 50px;
-
-  display: flex;
-  align-items: center;
-
-  overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-
-  z-index: 1000;
-
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-
-  transform: translateZ(0);
-}
-
-.notice-text {
-  display: inline-block;
-  white-space: nowrap;
-
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-
-  padding-left: 100%;
-
-  animation: scrollText 18s linear infinite;
-}
-
-/* Smooth scrolling animation */
-
-@keyframes scrollText {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-marquee {
-  width: 100%;
-  padding: 12px 0;
-  margin-bottom: 20px;
-
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(8px);
-
-  border-radius: 12px;
-
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* Mobile phones */
