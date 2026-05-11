@@ -34,14 +34,15 @@ function checkBirthday() {
   if (isBirthday) {
     if (birthdayPopup) birthdayPopup.classList.remove('hidden');
     if (main) main.classList.add('hidden');
+    launchConfetti();
   } else {
     showMain();
   }
 }
 
 const birthdayImages = [
-  "images/saini1.jpg",
-  "images/saini2.jpg",
+  "BirthdayImages/saini1.jpg",
+  "BirthdayImages/saini2.jpg",
 ];
 
 function setRandomBirthdayImage() {
@@ -60,6 +61,46 @@ function showMain() {
   if (main) main.classList.remove('hidden');
 }
 
+// 🎉 Birthday Confetti Effect
+function launchConfetti() {
+  const container = document.getElementById("confetti-container");
+
+  if (!container) return;
+
+  const colors = [
+    "#ff4d6d",
+    "#ff8fab",
+    "#ffd6e7",
+    "#ffffff",
+    "#ffc2d1"
+  ];
+
+  for (let i = 0; i < 120; i++) {
+    const confetti = document.createElement("div");
+
+    confetti.classList.add("confetti");
+
+    confetti.style.left = Math.random() * 100 + "vw";
+
+    confetti.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+
+    confetti.style.animationDuration =
+      3 + Math.random() * 3 + "s";
+
+    confetti.style.width =
+      6 + Math.random() * 8 + "px";
+
+    confetti.style.height =
+      6 + Math.random() * 8 + "px";
+
+    container.appendChild(confetti);
+
+    setTimeout(() => {
+      confetti.remove();
+    }, 6000);
+  }
+}
 
 // Simple page navigation placeholder
 function openSection(section) {
