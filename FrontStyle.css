@@ -218,7 +218,7 @@ button:hover {
   transition: all 0.3s ease;
 }
 
-/* ✨ Hover effect */
+/* Hover effect */
 
 .nav-btn:hover {
   transform: translateY(-6px) scale(1.03);
@@ -228,7 +228,7 @@ button:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* 🌸 Icons */
+/* Icons */
 
 .nav-btn i {
   font-size: 2.5rem;
@@ -236,16 +236,13 @@ button:hover {
   color: #fff0f5;
 }
 
-/* 💖 Text */
-
+/*  Text */
 .nav-btn span {
   font-size: 1rem;
-
   font-family: 'Quicksand', sans-serif;
-
   font-weight: 600;
-
   text-align: center;
+  color: #ff0202
 }
 
 /* Smooth appearance */
@@ -276,47 +273,53 @@ button:hover {
   z-index: 1000;
 }
 
-/* ✨ Scrolling text */
-
+/* Scrolling text */
 .scroll-text {
   position: relative;
-
   display: inline-block;
   white-space: nowrap;
-
   font-family: Quicksand;
-
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.8px;
-
   color: #af0023;
-
   transform: translateX(100vw);
-
   animation: smoothScroll 18s linear infinite;
 }
 
 .saini-name {
   font-family: 'Great Vibes', cursive;
-
   font-size: 1.5rem;
-
   color: #75072a;
-
   padding: 0 4px;
 }
 
 /* Smooth scrolling */
-
 @keyframes smoothScroll {
   from {
     transform: translateX(100vw);
   }
-
   to {
     transform: translateX(-100%);
   }
+}
+
+/* Footer */
+.global-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 6px 0;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.78);
+  background: rgb(161, 109, 109);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  z-index: 9999;
 }
 
 /* Responsiveness Code Section */
