@@ -13,12 +13,17 @@
 <body>
 <div class="hearts" id="hearts"></div>
 
+<div class="notice-bar" id="noticeBar">
+  <div class="scroll-text">
+    🌸 A timeless collection of moments, memories, and feelings for 
+    <span class="saini-name">Saini Paul</span> — started on 20 May 2026 💖
+  </div>
+</div>
+
 <!-- Welcome Popup -->
 <div class="popup" id="welcome">
   <h1>Welcome to a little world of love and memories for Saini Paul 🌸💖</h1>
-
   <p>Are you ready to step in?</p>
-
   <button onclick="checkBirthday()">Begin The Journey</button>
 </div>
 
@@ -44,16 +49,16 @@
 </div>
 
 <!-- Main Website -->
-<div class="notice-bar hidden" id="noticeBar">
+
+<div class="note-bar hidden" id="noteBar">
   <div class="scroll-text">
-    🌸 A timeless collection of moments, memories, and feelings for 
-    <span class="saini-name">Saini Paul</span> — started on 20 May 2026 💖
-  </div>
+  <span class="note-name">Note for the day — </span>
+  <span id="dailyNote"></span>
 </div>
 
+</div>
 <div class="main hidden" id="main">
   <div class="nav">
-
     <button class="nav-btn">
       <i class="fa-solid fa-folder-open"></i>
       <span>Best of Memories</span>
@@ -77,12 +82,12 @@
   </div>
 </div>
 
-<!-- 🌸 Global Footer -->
-
+<!-- Footer -->
 <div class="global-footer">
   © 2026 • Crafted with love by Jit Hazra 💖
 </div>
 
+<script src="DailyNotes.js"></script>
 <script src="FrontScript.js"></script>
 </body>
 </html>

@@ -24,7 +24,7 @@ function checkBirthday() {
 
   const today = new Date();
 
-  const birthDay = 11;
+  const birthDay = 14;
   const birthMonth = 4;
 
   const isBirthday =
@@ -56,18 +56,27 @@ function setRandomBirthdayImage() {
 function showMain() {
   const birthdayPopup = document.getElementById('birthday');
   const main = document.getElementById('main');
-
-  if (birthdayPopup) birthdayPopup.classList.add('hidden');
-  if (main) main.classList.remove('hidden');
-  if (noticeBar) noticeBar.classList.remove('hidden');
+  const noteBar = document.getElementById('noteBar');
+  const noticeBar = document.getElementById('noticeBar');
+  if (birthdayPopup) {
+    birthdayPopup.classList.add('hidden');
+  }
+  if (main) {
+    main.classList.remove('hidden');
+  }
+  /* Show Note Bar */
+  if (noteBar) {
+    noteBar.classList.remove('hidden');
+  }
+  /* Hide Welcome Notice Bar */
+  if (noticeBar) {
+    noticeBar.classList.add('hidden');
+  }
 }
-
-// 🎉 Birthday Confetti Effect
+//Birthday Confetti Effect
 function launchConfetti() {
   const container = document.getElementById("confetti-container");
-
   if (!container) return;
-
   const colors = [
     "#ff4d6d",
     "#ff8fab",
@@ -78,25 +87,17 @@ function launchConfetti() {
 
   for (let i = 0; i < 120; i++) {
     const confetti = document.createElement("div");
-
     confetti.classList.add("confetti");
-
     confetti.style.left = Math.random() * 100 + "vw";
-
     confetti.style.backgroundColor =
       colors[Math.floor(Math.random() * colors.length)];
-
     confetti.style.animationDuration =
       3 + Math.random() * 3 + "s";
-
     confetti.style.width =
       6 + Math.random() * 8 + "px";
-
     confetti.style.height =
       6 + Math.random() * 8 + "px";
-
     container.appendChild(confetti);
-
     setTimeout(() => {
       confetti.remove();
     }, 6000);
@@ -108,8 +109,19 @@ function openSection(section) {
   alert("You clicked: " + section + " ❤️ (we will build this next)");
 }
 
+function setDailyNote() {
+  const noteElement = document.getElementById("dailyNote");
+  if (!noteElement) return;
+  const today = new Date();
+  // Changes automatically every day
+  const noteIndex =
+    today.getDate() % dailyNotes.length;
+  noteElement.textContent = dailyNotes[noteIndex];
+}
+
 // Initialize everything when page loads
 window.onload = function () {
   createHearts();
   setRandomBirthdayImage();
+  setDailyNote();
 };
