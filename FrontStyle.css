@@ -317,7 +317,6 @@ body {
 }
 
 /* Hover effect */
-
 .nav-btn:hover {
   transform: translateY(-6px) scale(1.03);
   background: rgba(255,255,255,0.22);
@@ -325,7 +324,6 @@ body {
 }
 
 /* Icons */
-
 .nav-btn i {
   font-size: 2.5rem;
   color: #fff0f5;
@@ -412,8 +410,8 @@ body {
 }
 
 .note-name {
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.5rem;
+  font-family: 'Limelight', cursive;
+  font-size: 1rem;
   color: #75072a;
   padding: 0 4px;
 }
