@@ -1,9 +1,7 @@
 /* FrontScript.js */
 function createHearts() {
   const heartsContainer = document.getElementById('hearts');
-
   if (!heartsContainer) return;
-
   for (let i = 0; i < 40; i++) {
     let heart = document.createElement('div');
     heart.classList.add('heart');
@@ -19,18 +17,13 @@ function checkBirthday() {
   const welcome = document.getElementById('welcome');
   const birthdayPopup = document.getElementById('birthday');
   const main = document.getElementById('main');
-
   if (welcome) welcome.classList.add('hidden');
-
   const today = new Date();
-
   const birthDay = 14;
   const birthMonth = 4;
-
   const isBirthday =
     today.getDate() === birthDay &&
     today.getMonth() === birthMonth;
-
   if (isBirthday) {
     if (birthdayPopup) birthdayPopup.classList.remove('hidden');
     if (main) main.classList.add('hidden');
@@ -54,24 +47,9 @@ function setRandomBirthdayImage() {
 }
 
 function showMain() {
-  const birthdayPopup = document.getElementById('birthday');
-  const main = document.getElementById('main');
-  const noteBar = document.getElementById('noteBar');
-  const noticeBar = document.getElementById('noticeBar');
-  if (birthdayPopup) {
-    birthdayPopup.classList.add('hidden');
-  }
-  if (main) {
-    main.classList.remove('hidden');
-  }
-  /* Show Note Bar */
-  if (noteBar) {
-    noteBar.classList.remove('hidden');
-  }
-  /* Hide Welcome Notice Bar */
-  if (noticeBar) {
-    noticeBar.classList.add('hidden');
-  }
+
+  window.location.href = "menu.html";
+
 }
 //Birthday Confetti Effect
 function launchConfetti() {
@@ -104,11 +82,6 @@ function launchConfetti() {
   }
 }
 
-// Simple page navigation placeholder
-function openSection(section) {
-  alert("You clicked: " + section + " ❤️ (we will build this next)");
-}
-
 function setDailyNote() {
   const noteElement = document.getElementById("dailyNote");
   if (!noteElement) return;
@@ -124,4 +97,5 @@ window.onload = function () {
   createHearts();
   setRandomBirthdayImage();
   setDailyNote();
+  
 };

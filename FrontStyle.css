@@ -103,182 +103,119 @@ body {
 /* Birthday Image */
 
 .birthday-photo img {
-
   width: 280px;
   height: 360px;
-
   object-fit: cover;
-
   border-radius: 28px;
-
   border: 4px solid rgba(255,255,255,0.7);
-
   background: rgba(255,255,255,0.08);
-
   backdrop-filter: blur(10px);
-
   box-shadow:
     0 15px 35px rgba(0,0,0,0.18),
     0 0 25px rgba(255,255,255,0.12);
-
   transition: all 0.4s ease;
-
   animation:
     fadeIn 0.8s ease,
     floatImage 4s ease-in-out infinite;
 }
 
 /* Soft Hover Effect */
-
 .birthday-photo img:hover {
-
   transform: scale(1.03);
-
   box-shadow:
     0 18px 40px rgba(0,0,0,0.22),
     0 0 35px rgba(255,255,255,0.2);
 }
 
 /* Birthday Popup */
-
 #birthday {
-
   max-width: 1100px;
-
   width: 90%;
-
   padding: 40px;
 }
 
 /* Two Column Layout */
 
 .birthday-layout {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 50px;
 }
 
 /* LEFT SIDE */
-
 .birthday-left {
-
   flex: 1;
-
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
 }
 
 /* RIGHT SIDE */
-
 .birthday-right {
-
   flex: 1;
-
   text-align: left;
 }
 
 /* Heading */
-
 .birthday-right h1 {
-
   font-size: 3rem;
-
   line-height: 1.2;
-
   margin-bottom: 20px;
-
   color: #fff0f5;
 }
 
 /* Message */
-
 .birthday-message {
-
   font-size: 1.1rem;
-
   line-height: 1.9;
 }
 
 /* Better Button */
-
 .birthday-right button {
-
   margin-top: 25px;
-
   padding: 12px 28px;
-
   font-size: 1rem;
 }
 
 /* Caption */
-
 .photo-caption {
-
   margin-top: 16px;
-
   font-family: 'Great Vibes', cursive;
-
   font-size: 2rem;
-
   color: #fff0f5;
 }
 
 /* Floating Animation */
-
 @keyframes floatImage {
-
   0% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-6px);
   }
-
   100% {
     transform: translateY(0px);
   }
 }
 
 /* Birthday Message Box */
-
 .birthday-message {
-
   margin-top: 15px;
-
   padding: 18px;
-
   border-radius: 18px;
-
   background: rgba(255,255,255,0.10);
-
   backdrop-filter: blur(8px);
-
   border: 1px solid rgba(255,255,255,0.18);
-
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 /* Message Text */
-
 .birthday-message p {
-
   font-family: 'Quicksand', sans-serif;
-
   font-size: 1.05rem;
-
   line-height: 1.8;
-
-  color: #fff5f7;
-
+  color: #000000;
   margin-bottom: 10px;
 }
 
@@ -312,7 +249,7 @@ body {
 }
 
 /* Buttons */
-button {
+.popup button {
   margin-top: 15px;
   padding: 10px 20px;
   border: none;
@@ -324,7 +261,7 @@ button {
   transition: 0.3s ease;
 }
 
-button:hover {
+.popup button:hover {
   transform: scale(1.05);
   background: #ffe3ec;
 }
@@ -383,9 +320,7 @@ button:hover {
 
 .nav-btn:hover {
   transform: translateY(-6px) scale(1.03);
-
   background: rgba(255,255,255,0.22);
-
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
@@ -393,7 +328,6 @@ button:hover {
 
 .nav-btn i {
   font-size: 2.5rem;
-
   color: #fff0f5;
 }
 
@@ -493,6 +427,34 @@ button:hover {
     transform: translateX(-100%);
   }
 }
+
+/* Inner Pages
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+/* Back Button */
+/*.back-btn {
+  margin-top: 25px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.22);
+} */
 
 /* Footer */
 .global-footer {
