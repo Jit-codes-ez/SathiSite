@@ -1,0 +1,170 @@
+/* Memories.css */
+
+/* MEMORY PAGE RESET */
+body {
+  display: block;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+/* Luxury Romantic Header */
+.memory-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 18px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(120, 0, 40, 0.92),
+      rgba(210, 30, 90, 0.88),
+      rgba(255, 120, 150, 0.82)
+    );
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.22),
+    inset 0 1px 1px rgba(255,255,255,0.18);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Animated Shine */
+.memory-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 45%;
+  height: 100%;
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.28),
+      transparent
+    );
+  transform: skewX(-25deg);
+  animation: shineMove 5s linear infinite;
+}
+
+@keyframes shineMove {
+  0% {
+    left: -120%;
+  }
+  100% {
+    left: 140%;
+  }
+}
+.memory-title {
+  position: relative;
+  z-index: 2;
+  font-family: 'Lobster', sans-serif;
+  font-size: 3.2rem;
+  color: #fff7f8;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.35),
+    0 4px 15px rgba(0,0,0,0.28);
+}
+
+/* Gallery */
+.gallery-container {
+  width: 100%;
+  padding: 30px 18px 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+/* Card */
+.memory-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: 0.3s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image */
+.memory-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* Caption */
+.memory-caption {
+  padding: 14px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  color: white;
+  background: rgba(255,255,255,0.08);
+}
+
+/* Back Button */
+.back-btn {
+  position: relative;
+  z-index: 2;
+  padding: 11px 24px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.16);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.26);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .memory-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    text-align: center;
+  }
+  .memory-title {
+    font-size: 2.3rem;
+  }
+  .gallery-container {
+    padding: 25px 18px 100px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .memory-title {
+    font-size: 2rem;
+  }
+  .gallery-container {
+    padding: 20px 15px 100px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+}

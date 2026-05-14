@@ -19,7 +19,7 @@ function checkBirthday() {
   const main = document.getElementById('main');
   if (welcome) welcome.classList.add('hidden');
   const today = new Date();
-  const birthDay = 14;
+  const birthDay = 15;
   const birthMonth = 4;
   const isBirthday =
     today.getDate() === birthDay &&
@@ -46,11 +46,43 @@ function setRandomBirthdayImage() {
   img.src = birthdayImages[randomIndex];
 }
 
+/* Disable Right Click */
+document.addEventListener("contextmenu", function(e) {
+  e.preventDefault();
+});
+
+/* Disable Image Dragging */
+document.addEventListener("dragstart", function(e) {
+  if (e.target.tagName === "IMG") {
+    e.preventDefault();
+  }
+});
+
+/* Disable Inspect Shortcuts */
+document.addEventListener("keydown", function(e) {
+
+  /* F12 */
+  if (e.key === "F12") {
+    e.preventDefault();
+  }
+
+  /* Ctrl + Shift + I */
+  if (e.ctrlKey && e.shiftKey && e.key === "I") {
+    e.preventDefault();
+  }
+
+  /* Ctrl + U */
+  if (e.ctrlKey && e.key === "u") {
+    e.preventDefault();
+  }
+
+});
+
+
 function showMain() {
-
-  window.location.href = "menu.html";
-
+  window.location.href = "Menu.html";
 }
+
 //Birthday Confetti Effect
 function launchConfetti() {
   const container = document.getElementById("confetti-container");
@@ -98,4 +130,4 @@ window.onload = function () {
   setRandomBirthdayImage();
   setDailyNote();
   
-};
+};  
