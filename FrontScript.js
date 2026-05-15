@@ -19,7 +19,7 @@ function checkBirthday() {
   const main = document.getElementById('main');
   if (welcome) welcome.classList.add('hidden');
   const today = new Date();
-  const birthDay = 15;
+  const birthDay = 16;
   const birthMonth = 4;
   const isBirthday =
     today.getDate() === birthDay &&
@@ -34,8 +34,11 @@ function checkBirthday() {
 }
 
 const birthdayImages = [
-  "BirthdayImages/saini1.jpg",
-  "BirthdayImages/saini2.jpg",
+  "BirthdayImages/Sathi1.png",
+  "BirthdayImages/Sathi2.png",
+  "BirthdayImages/Sathi3.png",
+  "BirthdayImages/Sathi4.png",
+  "BirthdayImages/Sathi5.png"
 ];
 
 function setRandomBirthdayImage() {

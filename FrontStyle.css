@@ -101,16 +101,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   position: relative;
 }
 
 /* Birthday Image */
-
 .birthday-photo img {
-  width: 280px;
-  height: 360px;
-  object-fit: cover;
+  width: 1000px;
+  height: 650px;
+  object-fit: fill;
   border-radius: 28px;
   border: 4px solid rgba(255,255,255,0.7);
   background: rgba(255,255,255,0.08);
@@ -170,12 +169,6 @@ body {
   color: #fff0f5;
 }
 
-/* Message */
-.birthday-message {
-  font-size: 1.1rem;
-  line-height: 1.9;
-}
-
 /* Better Button */
 .birthday-right button {
   margin-top: 25px;
@@ -183,13 +176,6 @@ body {
   font-size: 1rem;
 }
 
-/* Caption */
-.photo-caption {
-  margin-top: 16px;
-  font-family: 'Great Vibes', cursive;
-  font-size: 2rem;
-  color: #fff0f5;
-}
 
 /* Floating Animation */
 @keyframes floatImage {
@@ -202,26 +188,6 @@ body {
   100% {
     transform: translateY(0px);
   }
-}
-
-/* Birthday Message Box */
-.birthday-message {
-  margin-top: 15px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.10);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-/* Message Text */
-.birthday-message p {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #000000;
-  margin-bottom: 10px;
 }
 
 /* 🎉 Birthday Confetti */
@@ -471,22 +437,31 @@ body {
   body {
     padding: 5px;
   }
-
   .popup {
     width: 95%;
     padding: 18px;
   }
 
+  .birthday-photo {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    margin: 15px auto;
+  }
+
+  .birthday-photo img {
+    width: 120%;
+    height: 90%;
+    border-radius: 16px;
+    display: block;
+  }
+
   .popup h1 {
     font-size: 1.3rem;
   }
-
-  
-
   .main h1 {
     font-size: 1.4rem;
   }
-
   .nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -494,12 +469,10 @@ body {
     width: 100%;
     padding: 10px;
   }
-
   .nav-btn {
     width: 100%;
     height: 115px;
   }
-
   button {
     width: 100%;
   }
