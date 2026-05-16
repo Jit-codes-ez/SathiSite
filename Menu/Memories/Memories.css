@@ -7,6 +7,14 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 0;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    #ffd6e7,
+    #ff8fab
+  );
+
+  background-attachment: fixed;
 }
 
 /* Luxury Romantic Header */
@@ -78,7 +86,7 @@ body {
   width: 100%;
   padding: 30px 18px 100px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 22px;
 }
 
@@ -110,7 +118,7 @@ body {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
   font-size: 1rem;
-  color: white;
+  color: rgb(121, 0, 46);
   background: rgba(255,255,255,0.08);
 }
 
