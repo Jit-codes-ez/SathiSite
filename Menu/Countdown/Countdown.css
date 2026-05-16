@@ -1,0 +1,225 @@
+/* COUNTDOWN PAGE */
+/* MEMORY PAGE RESET */
+body {
+  display: block;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    #ffd6e7,
+    #ff8fab
+  );
+
+  background-attachment: fixed;
+}
+
+/* Override popup center positioning */
+.popup.countdown-card {
+  position: relative !important;
+
+  top: unset !important;
+  left: unset !important;
+  right: unset !important;
+  bottom: unset !important;
+
+  transform: none !important;
+
+  margin: 50px auto !important;
+
+  max-width: 950px;
+  width: 92%;
+
+  padding: 40px 30px;
+}
+
+/* Luxury Romantic Header */
+.memory-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 18px 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(120, 0, 40, 0.92),
+      rgba(210, 30, 90, 0.88),
+      rgba(255, 120, 150, 0.82)
+    );
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.22),
+    inset 0 1px 1px rgba(255,255,255,0.18);
+  overflow: hidden;
+  z-index: 1000;
+}
+/* Animated Shine */
+.memory-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 45%;
+  height: 100%;
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.28),
+      transparent
+    );
+  transform: skewX(-25deg);
+  animation: shineMove 5s linear infinite;
+}
+
+@keyframes shineMove {
+  0% {
+    left: -120%;
+  }
+  100% {
+    left: 140%;
+  }
+}
+
+.memory-title {
+  position: relative;
+  z-index: 2;
+  font-family: 'Lobster', sans-serif;
+  font-size: 3.2rem;
+  color: #fff7f8;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.35),
+    0 4px 15px rgba(0,0,0,0.28);
+}
+
+.countdown-card {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  max-width: 950px;
+  width: 92%;
+  margin: 50px auto;
+  padding: 40px 30px;
+}
+
+/* Subtitle */
+.countdown-text {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: rgb(3, 2, 2);
+}
+
+/* Section */
+.countdown-section {
+  margin-top: 40px;
+}
+
+/* Section Title */
+.countdown-title {
+  margin-bottom: 20px;
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+  color: #ff0b5c;
+}
+
+/* Countdown Layout */
+.countdown-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* Time Box */
+.time-box {
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(10px);
+  border-radius: 22px;
+  padding: 24px 15px;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.12);
+  transition: 0.3s ease;
+}
+
+.time-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Numbers */
+.time-box span {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgb(112, 0, 0);
+  margin-bottom: 8px;
+}
+
+/* Labels */
+.time-box small {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.85);
+  letter-spacing: 1px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .countdown-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .countdown-title {
+    font-size: 1.7rem;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+  .memory-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .popup.countdown-card {
+    width: 95%;
+    padding: 25px 12px;
+    margin: 30px auto;
+  }
+
+  .countdown-container {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 8px;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .time-box {
+    padding: 14px 4px;
+    border-radius: 16px;
+  }
+
+  .time-box span {
+    font-size: 1.35rem;
+  }
+
+  .time-box small {
+    font-size: 0.7rem;
+  }
+
+  .countdown-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
