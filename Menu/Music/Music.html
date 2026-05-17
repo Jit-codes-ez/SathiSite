@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+  <title>Favourite Music ❤️</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../FrontStyle.css">
+  <link rel="stylesheet" href="Music.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Hearts -->
+  <div class="hearts" id="hearts"></div>
+
+  <!-- Header -->
+  <div class="memory-header">
+    <h1 class="memory-title">
+      Favourite Music 
+    </h1>
+        <button class="back-btn"
+      onclick="window.location.href='../../Menu.html'">
+      <i class="fa-solid fa-arrow-left"></i>
+      Back To Home
+    </button>
+  </div>
+
+  <!-- Music Grid -->
+  <div class="music-container"
+    id="musicContainer">
+  </div>
+
+  <!-- Music Popup -->
+  <div class="music-popup hidden"
+    id="musicPopup">
+    <div class="popup-content">
+      <img id="popupCover">
+      <h2 id="popupTitle"></h2>
+      <p id="popupArtist"></p>
+      <audio
+        id="popupAudio"
+        controls>
+      </audio>
+      <button class="close-btn"
+        onclick="closePopup()">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="global-footer">
+    © 2026 • Crafted with love by Jit Hazra 💖
+  </div>
+
+  <!-- Scripts -->
+  <script src="Music.js"></script>
+  <script src="../FrontScript.js"></script>
+
+</body>
+</html>

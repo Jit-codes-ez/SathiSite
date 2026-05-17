@@ -1,0 +1,309 @@
+/* MUSIC PAGE */
+body {
+  display: block;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    #ffd6e7,
+    #ff8fab
+  );
+  background-attachment: fixed;
+}
+
+/* HEADER */
+.memory-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 18px 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(120, 0, 40, 0.92),
+      rgba(210, 30, 90, 0.88),
+      rgba(255, 120, 150, 0.82)
+    );
+  backdrop-filter: blur(16px);
+  border-bottom:
+    1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.22),
+    inset 0 1px 1px rgba(255,255,255,0.18);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Back Button */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  padding: 11px 24px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.16);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.26);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* Shine Effect */
+.memory-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 45%;
+  height: 100%;
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.28),
+      transparent
+    );
+  transform: skewX(-25deg);
+  animation:
+    shineMove 5s linear infinite;
+}
+
+@keyframes shineMove {
+  0% {
+    left: -120%;
+  }
+  100% {
+    left: 140%;
+  }
+}
+
+/* Title */
+.memory-title {
+  position: relative;
+  z-index: 2;
+  font-family: 'Lobster', sans-serif;
+  font-size: 3rem;
+  color: #fff7f8;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.35),
+    0 4px 15px rgba(0,0,0,0.28);
+}
+
+/* MUSIC GRID */
+.music-container {
+  width: 100%;
+  padding: 35px 25px 100px;
+  display: grid;
+  grid-template-columns:
+    repeat(4, 1fr);
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* MUSIC CAR */
+.music-card {
+  background:
+    rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.14);
+  transition: 0.35s ease;
+}
+
+.music-card:hover {
+  transform:
+    translateY(-8px);
+  box-shadow:
+    0 16px 35px rgba(0,0,0,0.18);
+}
+
+/* Cover */
+.music-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: Cover;
+  display: block;
+}
+
+/* Music Info */
+.music-info {
+  padding: 18px;
+  text-align: center;
+}
+
+.music-info h2 {
+  margin-bottom: 8px;
+  font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
+  color: #870038;
+}
+
+.music-info p {
+  margin-bottom: 18px;
+  color: #4d0022;
+  font-size: 0.95rem;
+}
+
+/* PLAY BUTTON */
+
+.play-btn {
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  background:
+    linear-gradient(
+      135deg,
+      #ff3f86,
+      #ff77a8
+    );
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow:
+    0 8px 18px rgba(255, 70, 120, 0.35);
+}
+
+.play-btn:hover {
+  transform:
+    scale(1.1);
+  box-shadow:
+    0 12px 25px rgba(255, 70, 120, 0.5);
+}
+
+/* POPUP */
+.music-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Hidden */
+.hidden {
+  display: none;
+}
+
+/* Popup Content */
+.popup-content {
+  width: 100%;
+  max-width: 420px;
+  background:
+    rgba(255,255,255,0.18);
+  backdrop-filter: blur(16px);
+  border-radius: 28px;
+  padding: 30px;
+  text-align: center;
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.28);
+}
+
+/* Popup Cover */
+.popup-content img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* Popup Title */
+.popup-content h2 {
+  font-family: 'Lobster', cursive;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+/* Popup Artist */
+.popup-content p {
+  color: #ffe4ef;
+  margin-bottom: 20px;
+}
+
+/* Audio */
+.popup-content audio {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Close Button */
+.close-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  background:
+    linear-gradient(
+      135deg,
+      #ff3f86,
+      #ff77a8
+    );
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  transform:
+    scale(1.05);
+}
+
+/* TABLET*/
+
+@media (max-width: 900px) {
+  .music-container {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .memory-title {
+    font-size: 2rem;
+  }
+  .music-container {
+    grid-template-columns: 1fr;
+    padding: 20px 15px 90px;
+    gap: 20px;
+  }
+
+  .music-info h2 {
+    font-size: 1.3rem;
+  }
+
+  .popup-content {
+    padding: 22px;
+  }
+}
