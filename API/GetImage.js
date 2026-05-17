@@ -1,7 +1,5 @@
 export default async function handler(req, res) {
-
   const filePath = req.query.path;
-
   const response = await fetch(
     `https://api.github.com/repos/Jit-codes-ez/SathiSitePrivate/contents/${filePath}`,
     {
@@ -12,7 +10,7 @@ export default async function handler(req, res) {
     }
   );
 
-  if (!response.ok) {
+  if (!response.ok) {   
     return res.status(404).send("Image not found");
   }
 
