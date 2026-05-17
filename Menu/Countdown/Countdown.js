@@ -1,12 +1,12 @@
 /* Countdown.js */
 
 /* Birthday Date */
-const birthdayMonth = 5;
 const birthdayDate = 20;
+const birthdayMonth = 5;
 
 /* Anniversary Date */
-const anniversaryMonth = 9;
 const anniversaryDate = 24;
+const anniversaryMonth = 9; 
 
 /* Generic Countdown Function */
 
