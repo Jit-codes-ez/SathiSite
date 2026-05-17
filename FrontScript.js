@@ -12,33 +12,42 @@ function createHearts() {
   }
 }
 
-// Check birthday logic
+// check Birthday Logic
 function checkBirthday() {
-  const welcome = document.getElementById('welcome');
-  const birthdayPopup = document.getElementById('birthday');
-  const main = document.getElementById('main');
-  if (welcome) welcome.classList.add('hidden');
+  const welcome =
+    document.getElementById('welcome');
+  const birthdayPopup =
+    document.getElementById('birthday');
+  const main =
+    document.getElementById('main');
+  if (welcome)
+    welcome.classList.add('hidden');
   const today = new Date();
-  const birthDay = 16;
-  const birthMonth = 4;
+  const birthDay = 20;
+  const birthMonth = 4; // 0 = January, 1 = February, ..., 4 = May
   const isBirthday =
     today.getDate() === birthDay &&
     today.getMonth() === birthMonth;
   if (isBirthday) {
-    if (birthdayPopup) birthdayPopup.classList.remove('hidden');
-    if (main) main.classList.add('hidden');
+    if (birthdayPopup)
+      birthdayPopup.classList.remove('hidden');
+    if (main)
+      main.classList.add('hidden');
     launchConfetti();
+    setRandomBirthdayImage();
   } else {
-    showMain();
+    /* Check Anniversary */
+    checkLoveAnniversary();
+
   }
 }
 
 const birthdayImages = [
-  "BirthdayImages/Sathi1.png",
-  "BirthdayImages/Sathi2.png",
-  "BirthdayImages/Sathi3.png",
-  "BirthdayImages/Sathi4.png",
-  "BirthdayImages/Sathi5.png"
+  "BirthdayImages/img1.png",
+  "BirthdayImages/img2.png",
+  "BirthdayImages/img3.png",
+  "BirthdayImages/img4.png",
+  "BirthdayImages/img5.png"
 ];
 
 function setRandomBirthdayImage() {
@@ -47,6 +56,46 @@ function setRandomBirthdayImage() {
 
   const randomIndex = Math.floor(Math.random() * birthdayImages.length);
   img.src = birthdayImages[randomIndex];
+}
+
+// Check love anniversary logic
+function checkLoveAnniversary() {
+  const anniversaryPopup =
+    document.getElementById('anniversary');
+  const main =
+    document.getElementById('main');
+  const today = new Date();
+  const anniversaryDay = 23;
+  const anniversaryMonth = 8; // 0 = January, 1 = February, ..., 8 = September
+  const isAnniversary =
+    today.getDate() === anniversaryDay &&
+    today.getMonth() === anniversaryMonth;
+  if (isAnniversary) {
+    if (anniversaryPopup)
+      anniversaryPopup.classList.remove('hidden');
+    if (main)
+      main.classList.add('hidden');
+    launchConfetti();
+    setRandomAnniversaryImage();
+  } else {
+    showMain();
+
+  }
+}
+
+const anniversaryImages = [
+  "AnniversaryImages/img1.jpg",
+  "AnniversaryImages/img2.jpg",
+  "AnniversaryImages/img3.jpg",
+  "AnniversaryImages/img4.jpg",
+];
+
+function setRandomAnniversaryImage() {
+  const img = document.getElementById("anniversaryImg");
+  if (!img) return;
+
+  const randomIndex = Math.floor(Math.random() * anniversaryImages.length);
+  img.src = anniversaryImages[randomIndex];
 }
 
 /* Disable Right Click */
@@ -131,6 +180,7 @@ function setDailyNote() {
 window.onload = function () {
   createHearts();
   setRandomBirthdayImage();
+  setRandomAnniversaryImage()
   setDailyNote();
   
 };  

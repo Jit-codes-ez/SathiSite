@@ -40,30 +40,6 @@ body {
   z-index: 1000;
 }
 
-/* Back Button */
-.back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 2;
-  padding: 11px 24px;
-  border: none;
-  border-radius: 30px;
-  background: rgba(255,255,255,0.16);
-  color: white;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.back-btn:hover {
-  background: rgba(255,255,255,0.26);
-  transform: translateY(-2px) scale(1.04);
-  box-shadow:
-    0 8px 20px rgba(0,0,0,0.18);
-}
-
 /* Shine Effect */
 .memory-header::before {
   content: '';
@@ -117,7 +93,7 @@ body {
   box-sizing: border-box;
 }
 
-/* MUSIC CAR */
+/* MUSIC CARD */
 .music-card {
   background:
     rgba(255,255,255,0.14);
@@ -164,7 +140,6 @@ body {
 }
 
 /* PLAY BUTTON */
-
 .play-btn {
   width: 55px;
   height: 55px;

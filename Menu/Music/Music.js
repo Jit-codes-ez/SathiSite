@@ -2,7 +2,7 @@ const songs = [
 
   {
     title: "Bhalobashar Morshum",
-    artist: "Shreya-Ghoshal",
+    artist: "Shreya Ghoshal",
     cover: "Covers/Bhalobashar Morshum.jpg",
     song: "Songs/Bhalobashar Morshum.mp3"
   },
@@ -22,10 +22,24 @@ const songs = [
   },
 
   {
+    title: "Obosheshe",
+    artist: "Arijit Singh",
+    cover: "Covers/Obosheshe.jpg",
+    song: "Songs/Obosheshe.mp3"
+  },
+
+  {
     title: "Tumi Jantei Paro Naa",
     artist: "Mahtim Shakib",
     cover: "Covers/Tumi Jantei Paro Naa.jpg",
     song: "Songs/Tumi Jantei Paro Naa.mp3"
+  },
+
+  {
+    title: "Ek Minute Er Chumu",
+    artist: "Hooliganism",
+    cover: "Covers/Ek Minute Er Chumu.jpg",
+    song: "Songs/Ek Minute Er Chumu.mp3"
   },
 
   {
