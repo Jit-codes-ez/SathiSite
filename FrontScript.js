@@ -23,7 +23,7 @@ function checkBirthday() {
   if (welcome)
     welcome.classList.add('hidden');
   const today = new Date();
-  const birthDay = 20;
+  const birthDay = 19;
   const birthMonth = 4; // 0 = January, 1 = February, ..., 4 = May
   const isBirthday =
     today.getDate() === birthDay &&
