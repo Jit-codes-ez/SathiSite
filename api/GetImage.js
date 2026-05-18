@@ -3,7 +3,7 @@ export default async function handler(req, res) {
   const path = req.query.path;
 
   const response = await fetch(
-    `https://api.github.com/repos/Jit-codes-ez/SathiSitePrivate/contents/${path}`,
+    `https://api.github.com/repos/Jit-codes-ez/SathiSitePrivate/${path}`,
     {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
