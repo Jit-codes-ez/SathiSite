@@ -25,7 +25,5 @@ export default async function handler(req, res) {
     "Content-Type",
     response.headers.get("content-type")
   );
-  
-
   res.send(Buffer.from(buffer));
 }
