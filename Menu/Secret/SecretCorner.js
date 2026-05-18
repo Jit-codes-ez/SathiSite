@@ -55,7 +55,7 @@ function loadImages() {
     const image = document.createElement("img");
 
     // 💖 THIS is where Vercel API is used
-    image.src = `/API/GetImage?path=Images/${img}`;
+    image.src = `/api/GetImage?path=Images/${img}`;
 
     image.alt = `Memory ${index + 1}`;
 
