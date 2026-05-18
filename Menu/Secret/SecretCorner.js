@@ -43,7 +43,9 @@ function loadImages() {
     "img1.jpg",
     "img2.jpg",
     "img3.jpg",
-    "img4.jpg"
+    "img4.jpg",
+    "img5.jpg",
+    "img6.jpg"
   ];
 
   gallery.innerHTML = ""; // clear old content
@@ -53,7 +55,7 @@ function loadImages() {
     const image = document.createElement("img");
 
     // 💖 THIS is where Vercel API is used
-    image.src = `/api/images?path=Images/${img}`;
+    image.src = `/API/GetImage?path=Images/${img}`;
 
     image.alt = `Memory ${index + 1}`;
 
