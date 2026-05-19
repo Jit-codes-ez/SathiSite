@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   const path = req.query.path;
 
   if (!path) {
-    return res.status(400).json({ error: "Path required" });
+    return res.status(400).send("Path missing");
   }
 
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`;
@@ -17,23 +17,25 @@ export default async function handler(req, res) {
     const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        Accept: "application/vnd.github+json"
+        Accept: "application/vnd.github.v3+json"
       }
     });
 
     if (!response.ok) {
-      return res.status(response.status).json({
-        error: "GitHub fetch failed"
-      });
+      const err = await response.text();
+      return res.status(response.status).send(err);
     }
 
     const data = await response.json();
 
-    // 🔥 GitHub returns base64 in content field
+    // 🔥 SAFETY CHECK
+    if (!data.content) {
+      return res.status(500).send("No file content received from GitHub");
+    }
+
     const buffer = Buffer.from(data.content, "base64");
 
-    // detect file type
-    const ext = path.split(".").pop();
+    const ext = path.split(".").pop().toLowerCase();
 
     const mime =
       ext === "png"
@@ -48,6 +50,6 @@ export default async function handler(req, res) {
     res.send(buffer);
 
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).send(err.message);
   }
 }
