@@ -6,40 +6,48 @@ export default async function handler(req, res) {
 
   const path = req.query.path;
 
-  const url =
-    `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`;
+  if (!path) {
+    return res.status(400).json({ error: "Path required" });
+  }
+
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`;
 
   try {
 
     const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        Accept: "application/vnd.github.v3.raw"
+        Accept: "application/vnd.github+json"
       }
     });
 
     if (!response.ok) {
-
-      const errorText =
-        await response.text();
-
-      return res
-        .status(response.status)
-        .send(errorText);
+      return res.status(response.status).json({
+        error: "GitHub fetch failed"
+      });
     }
 
-    const buffer =
-      Buffer.from(await response.arrayBuffer());
+    const data = await response.json();
 
-    res.setHeader("Content-Type", "image/jpeg");
+    // 🔥 GitHub returns base64 in content field
+    const buffer = Buffer.from(data.content, "base64");
+
+    // detect file type
+    const ext = path.split(".").pop();
+
+    const mime =
+      ext === "png"
+        ? "image/png"
+        : ext === "webp"
+        ? "image/webp"
+        : "image/jpeg";
+
+    res.setHeader("Content-Type", mime);
     res.setHeader("Content-Disposition", "inline");
 
     res.send(buffer);
 
   } catch (err) {
-
-    res.status(500).json({
-      error: err.message
-    });
+    res.status(500).json({ error: err.message });
   }
 }
