@@ -74,6 +74,7 @@ function loadImages() {
 
   gallery.appendChild(image);
 });
+}
 /* OPEN PRIVATE GALLERY */
 function openGallery() {
 
