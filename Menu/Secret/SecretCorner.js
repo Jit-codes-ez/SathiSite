@@ -56,6 +56,7 @@ function loadImages() {
 
     // 💖 THIS is where Vercel API is used
     image.src = `/api/GetImage?path=Images/${img}`;
+    printf(`Loading image: ${image.src}`); // Debug log
 
     image.alt = `Memory ${index + 1}`;
 
