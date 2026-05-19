@@ -1,3 +1,4 @@
+alert("JS Loaded");
 const PASSWORD = "saini123";
 
 /* CHECK PASSWORD */
