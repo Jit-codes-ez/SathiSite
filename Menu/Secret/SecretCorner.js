@@ -52,25 +52,28 @@ function loadImages() {
 
   images.forEach((img, index) => {
 
-    const image = document.createElement("img");
+  const image = document.createElement("img");
 
-    // 💖 THIS is where Vercel API is used
-    image.src = `/api/GetImage?path=Images/${img}`;
-    console.log(`Loading image: ${image.src}`);
+  image.src = `/api/GetImage?path=Images/${img}`;
 
-    image.alt = `Memory ${index + 1}`;
+  console.log("Loading:", image.src);
 
-    // smooth fade-in effect (optional but nice)
-    image.style.opacity = "0";
-    image.onload = () => {
-      image.style.transition = "0.5s ease";
-      image.style.opacity = "1";
-    };
+  image.alt = `Memory ${index + 1}`;
 
-    gallery.appendChild(image);
-  });
-}
+  image.style.opacity = "0";
 
+  image.onload = () => {
+    image.style.transition = "0.5s ease";
+    image.style.opacity = "1";
+    console.log("Loaded:", img);
+  };
+
+  image.onerror = () => {
+    console.log("FAILED:", image.src);
+  };
+
+  gallery.appendChild(image);
+});
 /* OPEN PRIVATE GALLERY */
 function openGallery() {
 
