@@ -111,7 +111,9 @@ function openGallery() {
   const content =
     document.getElementById("content");
 
-  content.classList.add("active");
+  content.classList.remove("hidden");
+
+  content.style.display = "block";
 
   loadImages();
 }
