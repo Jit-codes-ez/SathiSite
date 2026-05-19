@@ -4,7 +4,6 @@ export default async function handler(req, res) {
   const repo = "SathiSitePrivate";
   const branch = "main";
 
-  // get image path from URL
   const path = req.query.path;
 
   const url =
@@ -21,18 +20,19 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
 
-      const errorText = await response.text();
+      const errorText =
+        await response.text();
 
-      return res.status(response.status).send(errorText);
+      return res
+        .status(response.status)
+        .send(errorText);
     }
 
     const buffer =
       Buffer.from(await response.arrayBuffer());
 
-    res.setHeader(
-      "Content-Type",
-      response.headers.get("content-type")
-    );
+    res.setHeader("Content-Type", "image/jpeg");
+    res.setHeader("Content-Disposition", "inline");
 
     res.send(buffer);
 
