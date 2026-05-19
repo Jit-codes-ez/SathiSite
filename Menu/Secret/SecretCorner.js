@@ -77,12 +77,14 @@ function loadImages() {
 /* OPEN PRIVATE GALLERY */
 function openGallery() {
 
-  document.getElementById("loveLetter").style.display = "none";
+  document.getElementById("loveLetter")
+    .style.display = "none";
 
-  const content = document.getElementById("content");
-  content.classList.remove("hidden");
+  const content =
+    document.getElementById("content");
 
-  // 💖 LOAD IMAGES AFTER UNLOCK
+  content.style.display = "block";
+
   loadImages();
 }
 
