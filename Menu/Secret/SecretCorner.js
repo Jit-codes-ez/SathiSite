@@ -37,44 +37,42 @@ function togglePassword() {
 
 /* 💖 LOAD IMAGES FROM VERCEL API */
 function loadImages() {
-  const gallery = document.getElementById("privateGallery");
 
-  // 🔥 Your images inside GitHub repo (Images folder)
+  console.log("Gallery loading...");
+
+  const gallery =
+    document.getElementById("privateGallery");
+
   const images = [
     "img1.jpg",
     "img2.jpg",
-    "img3.jpg",
-    "img4.jpg",
-    "img5.jpg",
-    "img6.jpg"
+    "img3.jpg"
   ];
 
-  gallery.innerHTML = ""; // clear old content
+  gallery.innerHTML = "";
 
   images.forEach((img, index) => {
 
-  const image = document.createElement("img");
+    const image =
+      document.createElement("img");
 
-  image.src = `/api/GetImage?path=Images/${img}`;
+    image.src =
+      `/api/GetImage?path=Images/${img}`;
 
-  console.log("Loading:", image.src);
+    console.log("Trying:", image.src);
 
-  image.alt = `Memory ${index + 1}`;
+    image.alt = `Memory ${index + 1}`;
 
-  image.style.opacity = "0";
+    image.onload = () => {
+      console.log("Loaded:", img);
+    };
 
-  image.onload = () => {
-    image.style.transition = "0.5s ease";
-    image.style.opacity = "1";
-    console.log("Loaded:", img);
-  };
+    image.onerror = () => {
+      console.log("FAILED:", img);
+    };
 
-  image.onerror = () => {
-    console.log("FAILED:", image.src);
-  };
-
-  gallery.appendChild(image);
-});
+    gallery.appendChild(image);
+  });
 }
 /* OPEN PRIVATE GALLERY */
 function openGallery() {
