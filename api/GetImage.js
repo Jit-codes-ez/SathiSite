@@ -6,10 +6,6 @@ export default async function handler(req, res) {
 
   const path = req.query.path;
 
-  if (!path) {
-    return res.status(400).send("Path missing");
-  }
-
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`;
 
   try {
@@ -17,20 +13,19 @@ export default async function handler(req, res) {
     const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        Accept: "application/vnd.github.v3+json"
+        Accept: "application/vnd.github+json"
       }
     });
 
-    if (!response.ok) {
-      const err = await response.text();
-      return res.status(response.status).send(err);
-    }
-
     const data = await response.json();
 
-    // 🔥 SAFETY CHECK
+    // 🔥 HANDLE WRONG PATH CLEARLY
     if (!data.content) {
-      return res.status(500).send("No file content received from GitHub");
+      return res.status(404).json({
+        error: "File not found or path is incorrect",
+        path,
+        hint: "Check folder name (case-sensitive) and branch"
+      });
     }
 
     const buffer = Buffer.from(data.content, "base64");
@@ -50,6 +45,6 @@ export default async function handler(req, res) {
     res.send(buffer);
 
   } catch (err) {
-    res.status(500).send(err.message);
+    res.status(500).json({ error: err.message });
   }
 }
