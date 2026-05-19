@@ -1,5 +1,5 @@
 alert("JS Loaded");
-const PASSWORD = "saini123";
+const PASSWORD = "JitLovesSathi24/09/2023";
 
 /* CHECK PASSWORD */
 function checkPassword() {
